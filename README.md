@@ -1,3 +1,3 @@
 # test_app
 
-My first repo
+My first repository.
