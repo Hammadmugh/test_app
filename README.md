@@ -1,3 +1,3 @@
 # test_app
 
-My first repository.
+My first repo in ruby project.
