@@ -15,7 +15,7 @@ jobs:
     services:
       postgres:
         image: postgres:12
-        ports: ['5432:5432']
+        ports: ["5432:5432"]
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
@@ -36,15 +36,15 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.6' # change if using a different version
+          ruby-version: "3.3.6" # change if using a different version
 
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
 
       - name: Set up database
         run: |
-          bin/rails db:create
-          bin/rails db:schema:load
+          ruby bin/rails db:create
+          ruby bin/rails db:schema:load
 
       - name: Run tests
         run: bundle exec rspec
@@ -54,4 +54,3 @@ jobs:
 
       - name: Run RuboCop
         run: bundle exec rubocop
-
